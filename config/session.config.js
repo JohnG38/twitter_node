@@ -1,0 +1,17 @@
+const app = require('../app');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+app.use(session({
+    secret: "Voici ma clé secrete",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24 * 14 // cookie de 14 jours en ms
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://john:john@127.0.0.1:27017/twitter_dwwm',
+        ttl: 60 * 60 * 24 * 14 //  deja en secondes
+    })
+}))
