@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const tweet = require('./tweet.routes');
-const userRoute = require('./tweet.routes');
+const tweetRoute = require('./tweet.routes');
+const userRoute = require('./user.routes');
 const { tweetList } = require('../controllers/tweet.controller');
 
 router.use('/tweet', tweetRoute);
