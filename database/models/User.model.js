@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 const userSchema = schema({
     username: {type: String, required: true},
-    firstrname: {type: String, required: true},
+    firstname: {type: String, required: true},
     lastname: {type: String, required: true},
     local: {
         email: {type: String, required: true},
@@ -23,7 +23,7 @@ userSchema.statics.hashPassword = async (password) => {
     }
 }
 
-userSchema.statics.comparePassword = function (password) {
+userSchema.methods.comparePassword = function (password) {
     return bcrypt.compare(password, this.local.password)
 }
 

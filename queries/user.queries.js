@@ -6,7 +6,7 @@ exports.createNewUser  = async (user) => {
 
         const newUser = User({
             username: user.username,
-            firstrname: user.firstname,
+            firstname: user.firstname,
             lastname: user.lastname,
             local: {
                 email: user.email,
