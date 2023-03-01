@@ -45,13 +45,14 @@ a {
 
 .profile-container {
   width: 20%;
-  background-color: #b2bec3;
+  background-color: transparent;
   height: 70%;
   padding: 2.5rem;
   position: fixed;
   top: 20%;
   left: 5%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  border: 1px solid #ddd;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
@@ -239,10 +240,12 @@ a {
 }
 .tweet-card-author-data img {
   width: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #00ACEE;
 }
 .tweet-card-author-data p {
   margin-left: 1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 .tweet-card-author-actions a {
   color: #333;

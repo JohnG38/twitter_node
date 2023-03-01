@@ -1,12 +1,13 @@
 .profile-container {
     width: 20%;
-    background-color: $secondary-color-dark;
+    background-color: transparent;
     height: 70%;
     padding: 2.5rem;
     position: fixed;
     top: 20%;
     left: 5%;
     box-shadow: $box-shadow;
+    border: 1px solid #ddd;
     border-radius: 10px;
 
     @include flex($align: flex-start);
