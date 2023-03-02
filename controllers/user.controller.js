@@ -1,6 +1,7 @@
-const { createNewUser } = require("../queries/user.queries");
+const { createNewUser, findUserByUserName } = require("../queries/user.queries");
 const multer = require('multer');
 const path = require('path');
+const { findTweetsFromUserName } = require("../queries/tweet.queries");
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -47,3 +48,15 @@ exports.uploadImage = [
         next(error)
     }
 }]
+
+exports.displayProfile = async (req, res, next) => {
+    try {
+        const username = req.params.username;
+        const user = await findUserByUserName(username);
+        const tweets = await findTweetsFromUserName(user._id);
+
+        res.render('users/profile-show', {tweets, user, isAuthenticated: req.isAuthenticated, currentUser: req.user});
+    } catch (error) {
+        next(error)
+    }
+}
