@@ -9,7 +9,7 @@ block content
             .tweets-list 
                 if isAuthenticated
                     include ../includes/tweet-form.pug
-        //-         if tweets 
-        //-             each tweet in tweets
-        //-                 include ../includes/tweet-card.pug 
+                if tweets 
+                    each tweet in tweets
+                        include ../includes/tweet-card.pug 
 
