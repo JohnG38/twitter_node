@@ -8,4 +8,12 @@
         padding: 0 2rem;
         @include flex($justify: space-between)
     }
+
+    ul {
+        @include flex;
+        
+        a {
+            margin-left: 1rem;
+        }
+    }
 }

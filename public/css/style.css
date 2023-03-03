@@ -49,6 +49,16 @@ a:hover {
     flex-wrap: wrap;
   }
 }
+.top-bar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.top-bar ul a {
+  margin-left: 1rem;
+}
 
 .profile {
   width: 100%;
