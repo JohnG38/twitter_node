@@ -6,11 +6,21 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #333;
+  font-weight: 600;
+}
+a:hover {
+  color: #00ACEE;
 }
 
 .text-danger {
   margin-top: 10px;
   color: #eb4d4b;
+}
+
+.fa-regular:hover {
+  cursor: pointer;
+  color: #00ACEE;
 }
 
 * {
@@ -138,6 +148,11 @@ a {
 
 .tweets-container {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .tweets-container .tweets-list {
   width: 100%;
@@ -147,6 +162,27 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .tweets-container .tweets-list {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .tweets-container .tweets-list {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .tweets-container .tweets-list {
+    width: 50%;
+    margin-left: 20rem;
+  }
+}
+@media (min-width: 1200px) {
+  .tweets-container .tweets-list {
+    width: 30%;
+  }
 }
 
 .btn {
@@ -172,12 +208,18 @@ a {
   width: 100%;
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #ddd;
-  border-top-right-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .tweet-card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+  }
 }
 .tweet-card-author {
   width: 100%;
@@ -222,6 +264,7 @@ a {
   width: 100%;
   height: 7rem;
   padding: 2rem 0;
+  text-align: start;
 }
 .tweet-card-actions {
   width: 100%;
@@ -237,12 +280,19 @@ a {
 .form-new {
   width: 100%;
   padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
+}
+@media (min-width: 576px) {
+  .form-new {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
 }
 .form-new .form-title h4 {
   font-size: 1.2rem;
@@ -268,6 +318,126 @@ a {
 }
 .form-new .form-body .form-item input {
   font-size: 1rem;
+}
+
+.user-content {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-content .user-profile {
+  width: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .user-content .user-profile {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .user-content .user-profile {
+    width: 60%;
+  }
+}
+.user-content .user-profile-img {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-top: 3rem;
+  height: 12rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background-image: url("https://images.unsplash.com/photo-1616469829167-0bd76a80c913?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+}
+.user-content .user-profile-img img {
+  width: 10rem;
+  margin-top: -2rem;
+  margin-left: 1rem;
+  border-radius: 50%;
+  border: 3px solid #00ACEE;
+}
+.user-content .user-profile-info {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-content .user-profile-info h3 {
+  font-size: 1.5rem;
+  margin: auto 1rem;
+}
+.user-content .user-profile-info p {
+  font-size: 2rem;
+}
+.user-content .user-profile-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-content .user-profile-actions a {
+  margin-right: 2rem;
+}
+.user-content .user-profile-data {
+  width: 100%;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 1200px) {
+  .user-content .user-profile-data {
+    width: 60%;
+  }
+}
+
+.tweets-user-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .tweets-user-container {
+    width: 100%;
+  }
+}
+.tweets-user-container .tweets-user-list {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .tweets-user-container .tweets-user-list {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .tweets-user-container .tweets-user-list {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .tweets-user-container .tweets-user-list {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

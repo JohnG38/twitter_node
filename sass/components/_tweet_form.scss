@@ -1,9 +1,15 @@
 .form-new {
     width: 100%;
     padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin: 1rem auto;
 
     @include flex($direction: column, $align: flex-start);
-    border-bottom: 1px solid #ddd;
+
+    @include sm {
+        border: 1px solid #ddd;
+        border-radius: .5rem;
+    }
 
     .form-title h4 {
         font-size: 1.2rem;
