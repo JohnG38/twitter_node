@@ -320,6 +320,41 @@ a:hover {
   font-size: 1rem;
 }
 
+.content-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.content-box .form-box {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-top: 2rem;
+}
+.content-box .form-box h2 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #00ACEE;
+}
+.content-box .form-box .input-box {
+  width: 100%;
+}
+.content-box .form-box .input-box input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  margin: 1rem auto;
+}
+.content-box .form-box .input-box p a {
+  text-decoration: underline;
+  color: #00ACEE;
+}
+
 .user-content {
   width: 100%;
   border-bottom: 1px solid #ddd;
