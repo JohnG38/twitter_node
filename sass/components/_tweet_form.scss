@@ -1,0 +1,38 @@
+.form-new {
+    width: 100%;
+    padding: 1rem;
+
+    @include flex($direction: column, $align: flex-start);
+    border-bottom: 1px solid #ddd;
+
+    .form-title h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-body{
+        width: 100%;
+
+        .form-item {
+            width: 100%;
+
+            textarea, input {
+                width: 100%;
+                border: none;
+                resize: none;
+                border-radius: .5rem;
+                margin-bottom: 1rem;
+            }
+
+            textarea {
+                border: 1px solid #ddd;
+                height: 7rem;
+                padding: 1rem;
+            }
+
+            input {
+                font-size: 1rem;
+            }
+        }
+    }
+}

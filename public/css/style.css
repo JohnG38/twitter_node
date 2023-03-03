@@ -21,176 +21,119 @@ a {
 }
 
 .top-bar {
-  height: 15vh;
-  padding: 15px 30px;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #eeeeee;
-}
-.top-bar ul {
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-.top-bar ul li {
-  margin-left: 10px;
+@media (min-width: 1200px) {
+  .top-bar {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
-.profile-container {
-  width: 20%;
-  background-color: transparent;
-  height: 70%;
-  padding: 2.5rem;
+.profile {
+  width: 100%;
   position: fixed;
-  top: 20%;
-  left: 5%;
+  bottom: 0;
+  left: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background-color: #00ACEE;
+  padding: 1rem 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 480px) {
-  .profile-container {
+@media (min-width: 992px) {
+  .profile {
+    width: 30%;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    top: auto;
-    border-radius: 0px;
-    width: 100%;
-    height: 10vh;
-    padding: 1rem;
+    height: 60%;
+    top: 20%;
+    left: 5%;
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
   }
 }
-@media (max-width: 480px) {
-  .profile-container .profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-right: 1rem;
+@media (min-width: 1200px) {
+  .profile {
+    width: 20%;
   }
 }
-.profile-container .profile-img img {
-  width: 6rem;
-  height: 6rem;
-  margin: 5px;
-  border: 3px solid #00ACEE;
+.profile-img {
+  width: 20%;
+}
+.profile-img img {
+  width: 4rem;
   border-radius: 50%;
+  border: 3px solid #ddd;
+  margin-left: 1rem;
 }
-@media (max-width: 480px) {
-  .profile-container .profile-img img {
-    width: 3rem;
-    height: 3rem;
+@media (min-width: 992px) {
+  .profile-img img {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .profile-info {
+    margin-left: -3rem;
+  }
+}
+@media (min-width: 992px) {
+  .profile-info {
     margin: 0;
   }
 }
-.profile-container .profile-actions {
-  margin-top: 30px;
+.profile-actions {
+  margin-left: 3rem;
 }
-@media (max-width: 480px) {
-  .profile-container .profile-actions {
+@media (min-width: 768px) {
+  .profile-actions {
+    margin-left: 25rem;
+  }
+}
+@media (min-width: 992px) {
+  .profile-actions {
+    margin: 2rem 0;
+  }
+}
+.profile-data {
+  display: none;
+}
+@media (min-width: 992px) {
+  .profile-data {
+    display: block;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0;
   }
 }
-.profile-container .profile-data {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-@media (max-width: 480px) {
-  .profile-container .profile-data {
-    display: hidden;
+@media (min-width: 992px) {
+  .profile-data-posts, .profile-data-followers, .profile-data-following {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
-}
-.profile-container .profile-data-posts, .profile-container .profile-data-followers, .profile-container .profile-data-following {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-right: 10px;
-}
-
-.tweets-container {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweets-container .tweets-list {
-  width: 80%;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-@media (max-width: 480px) {
-  .tweets-container .tweets-list {
-    width: 100%;
-  }
-}
-.tweets-container .tweets-list form {
-  margin-top: 2rem;
-  width: 50%;
-  padding: 1rem;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-@media (max-width: 480px) {
-  .tweets-container .tweets-list form {
-    width: 100%;
-  }
-}
-.tweets-container .tweets-list form .form-title h4 {
-  color: #333;
-}
-.tweets-container .tweets-list form .form-body {
-  width: 100%;
-}
-.tweets-container .tweets-list form .form-body .form-item {
-  width: 100%;
-}
-.tweets-container .tweets-list form .form-body .form-item textarea {
-  border: none;
-  width: 100%;
-  height: 5rem;
-  resize: none;
-  background-color: transparent;
-  padding: 10px 15px;
-  outline: none;
-}
-.tweets-container .tweets-list form .form-body .form-item:last-child {
-  text-align: right;
 }
 
 .btn {
@@ -212,197 +155,40 @@ a {
   background-color: #00ACEE;
 }
 
-.tweet-card {
-  width: 50%;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-top: 2rem;
-  padding: 1.5rem;
-}
-@media (max-width: 480px) {
-  .tweet-card {
-    width: 100%;
-  }
-}
-.tweet-card-author {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweet-card-author-data {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweet-card-author-data img {
-  width: 2.5rem;
-  border-radius: 50%;
-  border: 2px solid #00ACEE;
-}
-.tweet-card-author-data p {
-  margin-left: 1rem;
-  font-weight: 600;
-}
-.tweet-card-author-actions a {
-  color: #333;
-}
-.tweet-card-author-actions a i {
-  cursor: pointer;
-}
-.tweet-card-body {
+.form-new {
+  width: 100%;
   padding: 1rem;
-}
-.tweet-card-actions {
-  margin-top: 2rem;
-  border-top: 1px solid #eeeeee;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweet-card-actions i {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  cursor: pointer;
-}
-
-.content {
-  background-color: white;
-  height: 85vh;
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
 }
-
-section {
-  padding: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.form-new .form-title h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
-@media (max-width: 480px) {
-  section {
-    padding: 15px;
-  }
-}
-section .content-box {
-  width: 20%;
-  padding: 30px;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-@media (max-width: 480px) {
-  section .content-box {
-    width: 100%;
-  }
-}
-section .content-box .form-box {
+.form-new .form-body {
   width: 100%;
 }
-section .content-box .form-box .input-box {
-  margin-top: 15px;
-}
-section .content-box .form-box .input-box input {
+.form-new .form-body .form-item {
   width: 100%;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #333;
-  outline-style: none;
 }
-
-.user-content {
-  padding-top: 5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.user-content .user-profile {
-  border: 1px solid #ddd;
-  padding: 2rem;
+.form-new .form-body .form-item textarea, .form-new .form-body .form-item input {
+  width: 100%;
+  border: none;
+  resize: none;
   border-radius: 0.5rem;
-  width: 40%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-.user-content .user-profile-img {
-  width: 100%;
+.form-new .form-body .form-item textarea {
+  border: 1px solid #ddd;
+  height: 7rem;
+  padding: 1rem;
 }
-.user-content .user-profile-img img {
-  margin-top: -6rem;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  border: 3px solid #00ACEE;
-}
-.user-content .user-profile-info {
-  width: 100%;
-  height: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-.user-content .user-profile-info h3 {
-  font-size: 2rem;
-  margin-right: 2rem;
-}
-.user-content .user-profile-info p {
-  font-size: 2rem;
-}
-.user-content .user-profile-actions {
-  width: 100%;
-  margin-top: 1rem;
-}
-.user-content .user-profile-data {
-  width: 100%;
-  font-size: 1.3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.user-content .user-profile-data-posts, .user-content .user-profile-data-followers, .user-content .user-profile-data-following {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.tweets-user-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.tweets-user-container .tweets-user-list {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.form-new .form-body .form-item input {
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
