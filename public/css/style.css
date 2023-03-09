@@ -330,6 +330,60 @@ a:hover {
   font-size: 1rem;
 }
 
+.search-bar {
+  position: relative;
+}
+.search-bar form {
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.search-bar form input {
+  border: none;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+}
+.search-bar #search-menu-container {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1rem;
+  z-index: 2;
+  max-height: 400px;
+  overflow: scroll;
+}
+.search-bar #search-menu-container .search-menu-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-bar #search-menu-container .search-menu-result .search-user {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.search-bar #search-menu-container .search-menu-result .search-user:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.search-bar #search-menu-container .search-menu-result .search-user img {
+  border-radius: 50%;
+}
+.search-bar #search-menu-container .search-menu-result .search-user span {
+  margin-left: 1rem;
+}
+
 .content-box {
   width: 100%;
   display: flex;
