@@ -11,7 +11,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 14 // cookie de 14 jours
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://rachid:toto@localhost:27017/twitter_dwwm',
+        mongoUrl: 'mongodb://john:john@127.0.0.1:27017/twitter_dwwm',
         ttl: 60 * 60 * 24 * 14
     })
 }))
