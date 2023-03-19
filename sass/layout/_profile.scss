@@ -51,15 +51,57 @@
     }
 
     &-actions {
-        margin-left: 3rem;
+        width: 65%;
+
+        @include flex($justify: flex-end);
+
+        @include sm {
+            width: 75%;
+        }
 
         @include md {
-            margin-left: 25rem;
+            width: 75%;
         }
 
         @include lg {
             margin: 2rem 0;
+            @include flex($direction: column)
         }
+
+        i {
+            font-size: 1.5rem;
+            color: black !important;
+            margin-left: 1.5rem;
+            position: relative;
+
+            @include lg {
+                color: black;
+                margin-bottom: 1rem;
+                margin-left: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            span {
+                font-weight: 600;
+                display: block;
+                width: 20px;
+                height: 20px;
+                line-height: 5px;
+                font-size: 1rem;
+                padding: .5rem;
+                border-radius: 50%;
+                margin-right: .5rem;
+
+                @include lg {
+                    display: inline-block;
+                }
+            }
+        }
+
+
     }
 
     &-data {
@@ -67,7 +109,8 @@
 
         @include lg {
             display: block;
-            @include flex($direction: column)
+            @include flex($direction: column);
+            margin-top: 2rem;
         }
 
         &-posts, &-followers, &-following {

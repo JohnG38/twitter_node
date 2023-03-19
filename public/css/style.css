@@ -121,16 +121,63 @@ a:hover {
   }
 }
 .profile-actions {
-  margin-left: 3rem;
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 576px) {
+  .profile-actions {
+    width: 75%;
+  }
 }
 @media (min-width: 768px) {
   .profile-actions {
-    margin-left: 25rem;
+    width: 75%;
   }
 }
 @media (min-width: 992px) {
   .profile-actions {
     margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.profile-actions i {
+  font-size: 1.5rem;
+  color: black !important;
+  margin-left: 1.5rem;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .profile-actions i {
+    color: black;
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+}
+.profile-actions i:hover {
+  cursor: pointer;
+}
+.profile-actions i span {
+  font-weight: 600;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+@media (min-width: 992px) {
+  .profile-actions i span {
+    display: inline-block;
   }
 }
 .profile-data {
@@ -144,6 +191,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
 }
 @media (min-width: 992px) {
