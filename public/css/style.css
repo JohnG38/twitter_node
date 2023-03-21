@@ -121,7 +121,7 @@ a:hover {
   }
 }
 .profile-actions {
-  width: 65%;
+  width: 54%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -130,12 +130,12 @@ a:hover {
 }
 @media (min-width: 576px) {
   .profile-actions {
-    width: 75%;
+    width: 60%;
   }
 }
 @media (min-width: 768px) {
   .profile-actions {
-    width: 75%;
+    width: 70%;
   }
 }
 @media (min-width: 992px) {
@@ -150,19 +150,25 @@ a:hover {
 }
 .profile-actions i {
   font-size: 1.5rem;
-  color: black !important;
+  color: white;
   margin-left: 1.5rem;
   position: relative;
 }
 @media (min-width: 992px) {
   .profile-actions i {
-    color: black;
+    color: #00ACEE;
     margin-bottom: 1rem;
     margin-left: 0;
   }
 }
 .profile-actions i:hover {
   cursor: pointer;
+  color: white !important;
+}
+@media (min-width: 992px) {
+  .profile-actions i:hover {
+    color: #00ACEE !important;
+  }
 }
 .profile-actions i span {
   font-weight: 600;
@@ -173,7 +179,7 @@ a:hover {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 50%;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 @media (min-width: 992px) {
   .profile-actions i span {
@@ -185,13 +191,13 @@ a:hover {
 }
 @media (min-width: 992px) {
   .profile-data {
+    margin-top: 2rem;
     display: block;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 2rem;
   }
 }
 @media (min-width: 992px) {
@@ -279,6 +285,12 @@ a:hover {
     margin: 1rem auto;
   }
 }
+.tweet-card p {
+  font-weight: 600;
+}
+.tweet-card .fa-retweet {
+  margin: 1rem;
+}
 .tweet-card-author {
   width: 100%;
   border: 1px solid #ddd;
@@ -333,6 +345,10 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+.tweet-card-actions i:hover {
+  cursor: pointer;
+  color: #00ACEE;
 }
 
 .form-new {
@@ -430,6 +446,10 @@ a:hover {
 }
 .search-bar #search-menu-container .search-menu-result .search-user span {
   margin-left: 1rem;
+}
+
+.tweets-list-container {
+  width: 100%;
 }
 
 .content-box {

@@ -4,13 +4,15 @@ const {
     findTweetAndDelete, 
     findTweetById, 
     findTweetAndUpdate,
-    getCurrentUserTweetsWithFollowing
+    getCurrentUserTweetsWithFollowing,
+    likeTweet,
+    retweet
 } = require('../queries/tweet.queries');
 
 exports.createTweet = async (req, res, next) => {
     try {
         const body = req.body;
-        await createNewTweet({...body, author: req.user._id});
+        await createNewTweet({...body, author: req.user._id, retweeted: {status: false, initialAuthor: req.user._id}});
         res.redirect('/');
     } catch (err) {
         const errors = Object.keys(err.errors).map(key => err.errors[key].message);
@@ -27,11 +29,11 @@ exports.createTweet = async (req, res, next) => {
 exports.tweetList = async (req, res, next) => {
     try {
         if(!req.user) {
-        const tweets = await findAllTweets();
-        res.render('tweets/tweet-list', { tweets })
+            const tweets = await findAllTweets();
+            res.render('tweets/tweet-list', { tweets })
         } else {
-        const tweets = await getCurrentUserTweetsWithFollowing(req.user)
-        res.render('tweets/tweet-list', { tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user })
+            const tweets = await getCurrentUserTweetsWithFollowing(req.user)
+            res.render('tweets/tweet-list', { tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user })
         }
     } catch (error) {
         next(error)
@@ -48,7 +50,7 @@ exports.deleteTweet = async (req, res, next) => {
     }
 }
 
-exports.displayTweet = async (req, res, next) => {
+exports.editTweet = async (req, res, next) => {
     try {
         const tweetId = req.params.tweetId;
         const tweet = await findTweetById(tweetId);
@@ -68,6 +70,38 @@ exports.updateTweet = async (req, res, next) => {
         const body = req.body;
         await findTweetAndUpdate(tweetId, body);
         res.redirect('/')
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.showTweet = async (req, res, next) => {
+    try {
+        const tweetId = req.params.tweetId;
+        const tweet = await findTweetById(tweetId)
+        res.render('tweets/tweet-show', {tweet, comments: tweet.comments ,isAuthenticated: req.isAuthenticated(), currentUser: req.user})
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.tweetLike = async (req, res, next) => {
+    try {
+        const tweetId = req.params.tweetId;
+        const user = req.user
+        await likeTweet(tweetId, user)
+        const tweets = await findAllTweets()
+        res.render("includes/tweet-list", {tweets, isAuthenticated: req.isAuthenticated(), currentUser: req.user})
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.shareTweet = async (req, res, next) => {
+    try {
+        const tweetId = req.params.tweetId;
+        await retweet(tweetId, req.user._id);
+        res.redirect('/');
     } catch (error) {
         next(error)
     }

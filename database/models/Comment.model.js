@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema();
+const schema = mongoose.Schema;
 
 const commentSchema = schema({
-    message: {type: String, required: [true, "Le commentaire ne peut etre vide."]},
-    author: {type: schema.Types.objectId, ref: 'user', required: true}
+    message : {type: String, required: [true, "Le commentaire ne peut etre vide"]},
+    author : {type: schema.Types.ObjectId, ref: 'user', required: true},
 }, {
     timestamps: true
 })

@@ -10,6 +10,14 @@
         margin: 1rem auto;
     }
 
+    p {
+        font-weight: 600;
+    }
+
+    .fa-retweet {
+        margin: 1rem;
+    }
+
     &-author {
         width: 100%;
         border: 1px solid #ddd;
@@ -54,6 +62,13 @@
         padding-top: 2rem;
         border-top: 1px solid #ddd;
 
-        @include flex($justify: space-around)
+        @include flex($justify: space-around);
+
+        i {
+            &:hover {
+                cursor: pointer;
+                color: $primary-color;
+            }
+        }
     }
 }

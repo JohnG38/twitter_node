@@ -51,16 +51,16 @@
     }
 
     &-actions {
-        width: 65%;
+        width: 54%;
 
         @include flex($justify: flex-end);
 
         @include sm {
-            width: 75%;
+            width: 60%;
         }
 
         @include md {
-            width: 75%;
+            width: 70%;
         }
 
         @include lg {
@@ -70,21 +70,27 @@
 
         i {
             font-size: 1.5rem;
-            color: black !important;
+            color: white;
             margin-left: 1.5rem;
             position: relative;
 
             @include lg {
-                color: black;
+                color: $primary-color;
                 margin-bottom: 1rem;
                 margin-left: 0;
             }
 
             &:hover {
                 cursor: pointer;
+                color: white !important;
+
+                @include lg {
+                    color: $primary-color !important;
+                }
             }
 
             span {
+
                 font-weight: 600;
                 display: block;
                 width: 20px;
@@ -93,24 +99,25 @@
                 font-size: 1rem;
                 padding: .5rem;
                 border-radius: 50%;
-                margin-right: .5rem;
+                margin-right: 1rem;
 
                 @include lg {
                     display: inline-block;
                 }
             }
+
+
+
         }
-
-
     }
 
     &-data {
         display: none;
 
         @include lg {
-            display: block;
-            @include flex($direction: column);
             margin-top: 2rem;
+            display: block;
+            @include flex($direction: column)
         }
 
         &-posts, &-followers, &-following {

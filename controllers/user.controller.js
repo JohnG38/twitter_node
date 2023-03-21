@@ -1,4 +1,4 @@
-const { createNewUser, findUserByUsername, findUsersByQuerySearch, addUserToCurrentUserFollowingList, removeUserFromCurrentUserFollowingList, findUserById  } = require("../queries/user.queries");
+const { createNewUser, findUserByUsername, findUsersByQuerySearch, findUserById, addUserToCurrentUserFollowingList, removeUserFromCurrentUserFollowingList } = require("../queries/user.queries");
 const multer = require('multer');
 const path = require('path');
 const { findTweetsFromUsername } = require("../queries/tweet.queries");
@@ -55,6 +55,7 @@ exports.displayProfile = async (req, res, next) => {
         const username = req.params.username;
         const user = await findUserByUsername(username);
         const tweets = await findTweetsFromUsername(user._id);
+
         res.render("users/profile-show", { tweets, user, isAuthenticated: req.isAuthenticated(), currentUser: req.user});
     } catch (error) {
         next(error)
@@ -78,7 +79,8 @@ exports.followUser = async (req, res, next) => {
             addUserToCurrentUserFollowingList(req.user, userId),
             findUserById(userId)
         ])
-        res.redirect(`/user/${user.username}`)
+
+        res.redirect(`/user/${user.username}`);
     } catch (error) {
         next(error)
     }
@@ -87,11 +89,12 @@ exports.followUser = async (req, res, next) => {
 exports.unFollowUser = async (req, res, next) => {
     try {
         const userId = req.params.userId;
-        const [ _ , user] = await Promise.all([
+        const [ _, user] = await Promise.all([
             removeUserFromCurrentUserFollowingList(req.user, userId),
             findUserById(userId)
         ])
-        res.redirect(`/user/${user.username}`)
+
+        res.redirect(`/user/${user.username}`);
     } catch (error) {
         next(error)
     }
